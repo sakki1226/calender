@@ -1,0 +1,22 @@
+<h2>収入</h2>
+<ul>
+  <% @incomes.each do |income| %>
+    <li>
+      金額: <%= income.price %> 円,
+      種類: <%= IncomeCategory.find(income.income_category_id).name %>,
+      ユーザー: <%= income.user.nickname %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>支出</h2>
+<ul>
+  <% @expenses.each do |expense| %>
+    <li>
+      金額: <%= expense.price %> 円,
+      種類: <%= ExpenseCategory.find(expense.expense_category_id).name %>,
+      支払方法：<%= PaymentMethod.find(expense.payment_method_id).name %>,
+      ユーザー: <%= expense.user.nickname %>
+    </li>
+  <% end %>
+</ul>

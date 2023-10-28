@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="toppage">
+  <h1 class="top">カレンダー</h1>
+  <br>
+
+  <br>
+  <div class="col-md-8">
+    <%= month_calendar events: @blogs do |date, blogs| %>
+      <%= link_to blog_path(date.day, params: { date: date.day }) do %>
+        <%= date.day %>
+      <% end %>
+      <br>
+      <br>
+
+      <% total_expense = @expenses_by_date[date] || 0 %>
+      <div>
+        <%= total_expense %> 円
+      </div>
+
+      <% blogs.each do |blog| %>
+          <%= link_to blog.title, blog %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
