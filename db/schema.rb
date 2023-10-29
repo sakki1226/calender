@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_29_064342) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_29_115145) do
   create_table "blogs", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -27,6 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_064342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
+
+  create_table "families", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "incomes", charset: "utf8", force: :cascade do |t|
@@ -48,18 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_064342) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "invitation_token"
-    t.datetime "invitation_created_at"
-    t.datetime "invitation_sent_at"
-    t.datetime "invitation_accepted_at"
-    t.integer "invitation_limit"
-    t.string "invited_by_type"
-    t.bigint "invited_by_id"
-    t.integer "invitations_count", default: 0
+    t.string "family_name"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
-    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
-    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

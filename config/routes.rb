@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'families/sessions', registrations: 'registrations' }
   root to: 'blogs#index'
   resources :blogs, params: :date, only: [:show]
   resources :incomes
