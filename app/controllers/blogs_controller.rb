@@ -14,8 +14,6 @@ class BlogsController < ApplicationController
     @date = Date.parse(formatted_date)
     @incomes = Income.where("EXTRACT(YEAR FROM DATE(date)) = ? AND EXTRACT(MONTH FROM DATE(date)) = ? AND EXTRACT(DAY FROM DATE(date)) = ?", @date.year, @date.month, @date.day)
     @expenses = Expense.where("EXTRACT(YEAR FROM DATE(date)) = ? AND EXTRACT(MONTH FROM DATE(date)) = ? AND EXTRACT(DAY FROM DATE(date)) = ?", @date.year, @date.month, @date.day)
-    binding.pry
   end
-
 
 end
