@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_23_110305) do
   end
 
   create_table "expenses", charset: "utf8", force: :cascade do |t|
-    t.datetime "date", null: false
+    t.date "date", null: false
     t.integer "expense_category_id", null: false
     t.integer "payment_method_id", null: false
     t.integer "price", null: false

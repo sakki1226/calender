@@ -7,7 +7,7 @@
   <br>
   <div class="col-md-8">
     <%= month_calendar events: @blogs do |date, blogs| %>
-      <%= link_to blog_path(date.day, params: { date: date.day }) do %>
+      <%= link_to blog_path(date, params: { date: "#{date.year}-#{date.month}-#{date.day}" }) do %>
         <%= date.day %>
       <% end %>
       <br>
