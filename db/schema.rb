@@ -54,13 +54,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_115145) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "family_id", null: false
+    t.string "family_name"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["family_id"], name: "index_users_on_family_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "expenses", "users"
   add_foreign_key "incomes", "users"
-  add_foreign_key "users", "families"
 end
