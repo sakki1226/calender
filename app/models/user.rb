@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
   has_many :incomes
-
+  belongs_to :family, optional: true
 end
