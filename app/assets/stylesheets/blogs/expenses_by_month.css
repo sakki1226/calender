@@ -1,0 +1,14 @@
+.month_list {
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.income_expense_manthly_total{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+

@@ -1,7 +1,10 @@
-<h2>収入</h2>
+<div class="date">
+  <%= @date %>
+</div>
+<h2 class ="income-header">収入</h2>
 <ul>
   <% @incomes.each do |income| %>
-    <li>
+    <li class="income_contents">
       金額: <%= income.price %> 円,
       種類: <%= IncomeCategory.find(income.income_category_id).name %>,
       ユーザー: <%= income.user.nickname %>
@@ -9,7 +12,7 @@
   <% end %>
 </ul>
 
-<h2>支出</h2>
+<h2 class ="expense-header">支出</h2>
 <ul>
   <% @expenses.each do |expense| %>
     <li>

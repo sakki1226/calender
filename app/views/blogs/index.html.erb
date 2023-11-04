@@ -13,10 +13,12 @@
       <br>
       <br>
 
-      <% total_expense = @expenses_by_date[date] || 0 %>
-      <div>
-        <%= total_expense %> 円
-      </div>
+      <% total_expense = @expenses_by_date[date]  %>
+      <% if total_expense.present? %>  
+        <div class="total_price">
+          <%= total_expense %> 円
+        </div>
+      <% end %>
 
       <% blogs.each do |blog| %>
           <%= link_to blog.title, blog %>

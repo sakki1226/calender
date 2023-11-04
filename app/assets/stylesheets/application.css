@@ -23,3 +23,26 @@
   text-align: center;
   font-size: 25px;
 }
+
+.simple-calendar {
+  .day {
+    background: #faf8f5;
+  }
+  .wday-0 {
+    background: #ffeaea;
+  }
+  .wday-6 {
+    background: #ffeaea;
+  }
+  .today {
+    background: #FFA0A0;
+  }
+}
+
+.calendar-table tr td:hover {
+  background-color: #FFFF8c;    
+}
+
+.simple-calendar th {
+  text-align: center;
+}

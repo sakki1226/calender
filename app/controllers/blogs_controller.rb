@@ -16,4 +16,13 @@ class BlogsController < ApplicationController
     @expenses = Expense.where("EXTRACT(YEAR FROM DATE(date)) = ? AND EXTRACT(MONTH FROM DATE(date)) = ? AND EXTRACT(DAY FROM DATE(date)) = ?", @date.year, @date.month, @date.day)
   end
 
+  def expenses_by_month
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+    @expenses = Expense.where("YEAR(date) = ? AND MONTH(date) = ?", @year, @month)
+    @total_expense = @expenses.sum(:price)
+    @incomes = Income.where("YEAR(date) = ? AND MONTH(date) = ?", @year, @month)
+    @total_income = @incomes.sum(:price)
+  end
+
 end

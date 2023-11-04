@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'blogs#index'
+  get 'expenses_by_month', to: 'blogs#expenses_by_month', as: 'expenses_by_month'
   resources :blogs, params: :date, only: [:show]
   resources :incomes
   resources :expenses
