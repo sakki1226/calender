@@ -8,17 +8,17 @@
     <table width="800" border="1" align="center">
       <thead>
         <tr>
+          <th>ユーザー</th>
           <th>種類</th>
           <th>金額</th>
-          <th>ユーザー</th>
         </tr>
       </thead>
       <tbody>
         <% @incomes.each do |income| %>
           <tr>
+            <td align="center"><%= income.user.nickname %></td>
             <td align="center"><%= IncomeCategory.find(income.income_category_id).name %></td>
             <td align="center"><%= income.price %> 円</td>
-            <td align="center"><%= income.user.nickname %></td>
           </tr>
         <% end %>
       </tbody>
@@ -31,19 +31,22 @@
   <table width="800" border="1" align="center">
     <thead>
       <tr>
-        <th>種類</th>
-        <th>金額</th>
-        <th>支払方法</th>
         <th>ユーザー</th>
+        <th>種類</th>
+        <th>支払方法</th>
+        <th>金額</th>
+        
+        
       </tr>
     </thead>
     <tbody>
       <% @expenses.each do |expense| %>
         <tr>
-          <td align="center"><%= ExpenseCategory.find(expense.expense_category_id).name %></td>
-          <td align="center"><%= expense.price %> 円</td>
-          <td align="center"><%= PaymentMethod.find(expense.payment_method_id).name %></td>
           <td align="center"><%= expense.user.nickname %></td>
+          <td align="center"><%= ExpenseCategory.find(expense.expense_category_id).name %></td>
+          <td align="center"><%= PaymentMethod.find(expense.payment_method_id).name %></td>
+          <td align="center"><%= expense.price %> 円</td>
+          
         </tr>
       <% end %>
     </tbody>

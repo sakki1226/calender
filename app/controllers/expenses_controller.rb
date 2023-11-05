@@ -7,7 +7,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    @expense = Expense.new(expense_params)  
     if @expense.save
       redirect_to root_path
     else

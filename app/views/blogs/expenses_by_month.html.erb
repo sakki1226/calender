@@ -7,14 +7,20 @@
 
 
 <div class="month_list">
-  <table width="1000" border="1" align="center">
+  <table width="1500" border="1" align="center">
     <thead>
       <tr>
         <th>日付</th>
-        <% ExpenseCategory.where.not(id: 1).each do |category| %>
-          <th><%= category.name %></th>
+        <!-- 変動費のカテゴリーを表示 -->
+        <% ExpenseCategory.where(id: 2..9).each do |category| %>
+          <th class="variable_expense"><%= category.name %></th>
+        <% end %>
+        <!-- 固定費のカテゴリーを表示 -->
+        <% ExpenseCategory.where(id: 10..16).each do |category| %>
+          <th class="fixed_expense"><%= category.name %></th>
         <% end %>
         <th>金額</th>
+        <th>残額</th>
         <!-- 他に必要な列があれば追加してください -->
       </tr>
     </thead>
