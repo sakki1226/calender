@@ -22,6 +22,7 @@
 .calendar-heading{
   text-align: center;
   font-size: 25px;
+  margin-bottom: 40px;
 }
 
 .simple-calendar {
@@ -46,3 +47,4 @@
 .simple-calendar th {
   text-align: center;
 }
+

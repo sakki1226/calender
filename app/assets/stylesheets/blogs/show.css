@@ -2,17 +2,17 @@
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  margin-top: 20px;
+  margin: 20px 0 ;
 }
 
-.income-header{
+.income-header {
   text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.income_contents{
-  margin: 0 auto;
-}
 
-.expense-header{
+.expense-header {
   text-align: center;
 }

@@ -7,7 +7,7 @@
 
 
 <div class="month_list">
-  <table width="1000", border="1". align="center">
+  <table width="1000" border="1" align="center">
     <thead>
       <tr>
         <th>日付</th>
@@ -37,6 +37,16 @@
           </tr>
         <% end %>
       <% end %>
+      <td align="center">合計</td>
+      <% ExpenseCategory.where.not(id: 1).each do |category| %>
+        <td align="center">
+          <% total_price = @expenses.where(expense_category_id: category.id).sum(:price) %>
+          <%= total_price %>円
+        </td>
+      <% end %>
+      <td align="right">
+        <%= @expenses.sum(:price) %>円
+      </td>
     </tbody>
   </table>
 </div>
