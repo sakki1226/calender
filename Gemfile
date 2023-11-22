@@ -76,4 +76,6 @@ gem "simple_calendar", "~> 2.4"
 gem 'sassc'
 gem 'devise'
 gem 'active_hash'
-
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
