@@ -18,7 +18,11 @@
           <tr>
             <td align="center"><%= income.user.nickname %></td>
             <td align="center"><%= IncomeCategory.find(income.income_category_id).name %></td>
-            <td align="center"><%= income.price %> 円</td>
+            <td align="center">
+              <%= link_to edit_income_path(income) do %>
+                <%= income.price %> 円
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
@@ -45,8 +49,11 @@
           <td align="center"><%= expense.user.nickname %></td>
           <td align="center"><%= ExpenseCategory.find(expense.expense_category_id).name %></td>
           <td align="center"><%= PaymentMethod.find(expense.payment_method_id).name %></td>
-          <td align="center"><%= expense.price %> 円</td>
-          
+          <td align="center">
+            <%= link_to edit_expense_path(expense) do %>
+              <%= expense.price %> 円
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

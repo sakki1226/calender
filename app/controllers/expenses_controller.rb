@@ -15,6 +15,16 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+    @expense.update(expense_params)
+    redirect_to root_path
+  end
+  
   private
 
   def expense_params
