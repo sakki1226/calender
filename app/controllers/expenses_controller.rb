@@ -24,7 +24,13 @@ class ExpensesController < ApplicationController
     @expense.update(expense_params)
     redirect_to root_path
   end
-  
+
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+    redirect_to root_path
+  end
+
   private
 
   def expense_params
